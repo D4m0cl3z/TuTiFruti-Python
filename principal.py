@@ -20,6 +20,9 @@ def main():
     pygame.display.set_caption("TutiFrutiUNGS")
     screen = pygame.display.set_mode((ANCHO, ALTO))
 
+    #fondo del juego
+
+
     # Tiempo total del juego
     gameClock = pygame.time.Clock()
     totaltime = 0
@@ -73,7 +76,8 @@ def main():
         segundos = pygame.time.get_ticks() / 1000
 
         # limpiar pantalla anterior
-        screen.fill(COLOR_FONDO)
+        fondo = pygame.image.load("fondoJuego.jpg")
+        screen.blit(fondo,[-150,-22])
         if i<len(items):
             dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segundos)
         else:
@@ -84,7 +88,10 @@ def main():
 
 
     while True:
+
+
         for e in pygame.event.get():
+
             if e.type == QUIT:
                 pygame.quit()
                 return
