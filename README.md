@@ -1,6 +1,6 @@
 # TuTiFruti-Python
 Tp Introducción a la Programación UNGS 
 
-##Integrantes:
+## Integrantes:
 
-#Fabricio Damian Dominguez
+# Fabricio Damian Dominguez
