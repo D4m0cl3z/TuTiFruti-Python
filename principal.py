@@ -31,22 +31,52 @@ def main():
     puntos = 0
     candidata = ""
 
-##    abc=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    abc=["a","v","c",]
-    items=["colores","paises","animales"]
-##    colores= lectura("colores")
-##    paises= lectura("paises")
-##    animales= lectura("animales")
+    abc=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
-    colores=["rojo", "ruby","azul","a","amarillo","negro", "n","blanco", "b","celeste","c","verde","v","rosa", "r"]
-    paises=["argentina","uruguay","brasil","cuba","venezuela"]
-    animales=["mono","jirafa","gato","perro","jabali","elefante","pez","cocodrilo","rinoceronte","caballo"]
-    listaDeTodo=[colores,paises,animales]
+    items=["colores","paises","animales","nombres","verduras","frutas"]
+
+##  #se ingresan los archivos y se utiliza la guncion "borrarSobra()" para eliminar los residuos
+    colores_txt = open("colores.txt", "r")
+    colores = colores_txt.readlines()
+    colores = borrarSobra(colores)
+    colores_txt.close()
+
+    paises_txt = open("paises.txt", "r")
+    paises = paises_txt.readlines()
+    paises = borrarSobra(paises)
+    paises_txt.close()
+
+    animales_txt = open("animales.txt", "r")
+    animales = animales_txt.readlines()
+    animales = borrarSobra(animales)
+    animales_txt.close()
+
+    nombres_txt = open("nombres.txt", "r")
+    nombres = nombres_txt.readlines()
+    nombres = borrarSobra(nombres)
+    nombres_txt.close()
+
+    verduras_txt = open("verduras.txt", "r")
+    verduras = verduras_txt.readlines()
+    verduras = borrarSobra(verduras)
+    verduras_txt.close()
+
+    frutas_txt = open("frutas.txt", "r")
+    frutas = frutas_txt.readlines()
+    frutas = borrarSobra(frutas)
+    frutas_txt.close()
+
+
+
+
+    listaDeTodo=[colores,paises,animales,nombres,verduras,frutas]
     print(colores)
     letraAzar = unaAlAzar(abc)
     palabraUsuario=""
     eleccionUsuario=[]
     eleccionCompu=[]
+
+
     i=0
     while i < len(items):
         # 1 frame cada 1/fps segundos

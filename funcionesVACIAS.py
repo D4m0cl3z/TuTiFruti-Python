@@ -3,9 +3,13 @@ from principal import *
 import math
 import random
 
-def unaAlAzar(lista): #hay que desarrollar.
+
+#Elige una letra al azar gracias a la funcion ramdom.choice y se le pasa todo el abc
+def unaAlAzar(lista):
   return random.choice(lista)
 
+
+#se utiliza booleanos para comparar si la palabra que se ingresó corresponde a una palabra de la categoria situada en el evento actual
 def CategoriaCorrecta(palabraUsuario, palabrasDeCategoria):
     return palabraUsuario in palabrasDeCategoria
 
@@ -19,6 +23,8 @@ def esCorrecta(palabraUsuario, letra, listaDeTodo):
     return 10 if esPalabraCorrecta(palabraUsuario, letra, listaDeTodo) else 0
 
 
+#se utiliza la letra al  azar y las listas de las categorias para hacer que la maquina regrese una palabra corresponiente con la letra elegida,
+#la palabra que regresa es aleatoria
 def juegaCompu(letraAzar, listaDeTodo):
     listaAux= []
     listaCompu=[]
@@ -31,4 +37,13 @@ def juegaCompu(letraAzar, listaDeTodo):
             listaAux.append("Palabra no encontada")
         listaCompu.append(random.choice(listaAux))
     return listaCompu
+
+
+#gracias al uso del strip se va eliminando el sobrante "\n" para mejorar la lista
+def borrarSobra(lista):
+    listaCategoria = []
+    for i in range(0, len(lista)):
+        listaCategoria.append(lista[i].strip("\n"))
+    return listaCategoria
+
 
