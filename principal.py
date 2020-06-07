@@ -35,36 +35,15 @@ def main():
 
     items=["colores","paises","animales","nombres","verduras","frutas"]
 
-##  #se ingresan los archivos y se utiliza la guncion "borrarSobra()" para eliminar los residuos
-    colores_txt = open("colores.txt", "r")
-    colores = colores_txt.readlines()
-    colores = borrarSobra(colores)
-    colores_txt.close()
+##  #se ingresan los archivos y se utiliza la funcion "leerArchivo()" para leer los .txt que se le ingresen
 
-    paises_txt = open("paises.txt", "r")
-    paises = paises_txt.readlines()
-    paises = borrarSobra(paises)
-    paises_txt.close()
+    colores = leerArchivo("colores.txt")
+    paises = leerArchivo("paises.txt")
+    animales = leerArchivo("animales.txt")
+    nombres = leerArchivo("nombres.txt")
+    frutas = leerArchivo("frutas.txt")
+    verduras = leerArchivo("verduras.txt")
 
-    animales_txt = open("animales.txt", "r")
-    animales = animales_txt.readlines()
-    animales = borrarSobra(animales)
-    animales_txt.close()
-
-    nombres_txt = open("nombres.txt", "r")
-    nombres = nombres_txt.readlines()
-    nombres = borrarSobra(nombres)
-    nombres_txt.close()
-
-    verduras_txt = open("verduras.txt", "r")
-    verduras = verduras_txt.readlines()
-    verduras = borrarSobra(verduras)
-    verduras_txt.close()
-
-    frutas_txt = open("frutas.txt", "r")
-    frutas = frutas_txt.readlines()
-    frutas = borrarSobra(frutas)
-    frutas_txt.close()
 
 
 

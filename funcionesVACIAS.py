@@ -39,6 +39,14 @@ def juegaCompu(letraAzar, listaDeTodo):
     return listaCompu
 
 
+#lee los archivos para generar las listas
+def leerArchivo(archivo):
+    archivo_txt = open(archivo, "r")
+    listaCategoria = archivo_txt.readlines()
+    listaCategoriaCorregida = borrarSobra(listaCategoria)
+    archivo_txt.close()
+    return listaCategoriaCorregida
+
 #gracias al uso del strip se va eliminando el sobrante "\n" para mejorar la lista
 def borrarSobra(lista):
     listaCategoria = []
