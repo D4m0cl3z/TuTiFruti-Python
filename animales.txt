@@ -42,6 +42,7 @@ suricata
 tejon
 topo
 tucan
+vaca
 venado
 walabi
 yaguarete
