@@ -3,7 +3,6 @@ from principal import *
 import math
 import random
 
-
 #Elige una letra al azar gracias a la funcion ramdom.choice y se le pasa todo el abc
 def unaAlAzar(lista):
   return random.choice(lista)

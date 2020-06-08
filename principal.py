@@ -44,10 +44,6 @@ def main():
     frutas = leerArchivo("frutas.txt")
     verduras = leerArchivo("verduras.txt")
 
-
-
-
-
     listaDeTodo=[colores,paises,animales,nombres,verduras,frutas]
     print(colores)
     letraAzar = unaAlAzar(abc)
@@ -55,9 +51,15 @@ def main():
     eleccionUsuario=[]
     eleccionCompu=[]
 
+##Cargo sonido
+    pygame.mixer.music.load('Sonido_POP.mp3')
+
+
 
     i=0
     while i < len(items):
+
+
         # 1 frame cada 1/fps segundos
         gameClock.tick(fps)
         totaltime += gameClock.get_time()
@@ -75,6 +77,7 @@ def main():
                     if e.key == K_BACKSPACE:
                         palabraUsuario = palabraUsuario[0:len(palabraUsuario)-1]
                     if e.key == K_RETURN:
+                        pygame.mixer.music.play()
                         eleccionUsuario.append(palabraUsuario)
                         #chequea si es correcta y suma o resta puntos
                         sumar=esCorrecta(palabraUsuario, letraAzar, listaDeTodo[i])
@@ -86,10 +89,14 @@ def main():
 
         # limpiar pantalla anterior
         fondo = pygame.image.load("fondoJuego.jpg")
+
         screen.blit(fondo,[-150,-22])
+
         if i<len(items):
             dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segundos)
         else:
+            pygame.mixer.music.load('Aplauso.mp3')
+            pygame.mixer.music.play()
             eleccionCompu=juegaCompu(letraAzar, listaDeTodo)
             dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundos)
         pygame.display.flip()
