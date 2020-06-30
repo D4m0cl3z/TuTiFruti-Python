@@ -19,7 +19,17 @@ def esPalabraCorrecta(palabraUsuario, letra, listaDeTodo):
     return CategoriaCorrecta(palabraUsuario, listaDeTodo) and letraCorrecta(letra, palabraUsuario)
 
 def esCorrecta(palabraUsuario, letra, listaDeTodo):
-    return 10 if esPalabraCorrecta(palabraUsuario, letra, listaDeTodo) else 0
+    return Puntos(palabraUsuario) if esPalabraCorrecta(palabraUsuario, letra, listaDeTodo) else 0
+
+def Puntos( palabraUsuario):
+    palabraPunto=len(palabraUsuario)
+    if (palabraPunto >= 8 ):
+        return 15
+    elif (palabraPunto >= 5):
+        return 10
+    else:
+        return 5
+
 
 
 #se utiliza la letra al  azar y las listas de las categorias para hacer que la maquina regrese una palabra corresponiente con la letra elegida,

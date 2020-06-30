@@ -80,7 +80,7 @@ def main():
                         pygame.mixer.music.play()
                         eleccionUsuario.append(palabraUsuario)
                         #chequea si es correcta y suma o resta puntos
-                        sumar=esCorrecta(palabraUsuario, letraAzar, listaDeTodo[i])
+                        sumar=esCorrecta(palabraUsuario.lower(), letraAzar, listaDeTodo[i])
                         puntos+=sumar
                         palabraUsuario=""
                         i=i+1
@@ -95,10 +95,16 @@ def main():
         if i<len(items):
             dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segundos)
         else:
+            if puntos>15:
+                fondo=pygame.image.load("IMG1.png")
+            else:
+                fondo=pygame.image.load("IMG2.png")
+            screen.blit(fondo,[-120,10])
             pygame.mixer.music.load('Aplauso.mp3')
             pygame.mixer.music.play()
             eleccionCompu=juegaCompu(letraAzar, listaDeTodo)
             dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundos)
+
         pygame.display.flip()
 
 

@@ -93,7 +93,7 @@ def dibujarSalida(screen, letra, items, eleccionUsuario, eleccioncompu, puntos, 
     defaultFontMUYGRANDE = pygame.font.Font(pygame.font.get_default_font(), TAMANO_LETRA_MUYGRANDE)
 
     #Linea Horizontal
-    pygame.draw.line(screen, (255, 255, 255), (0, ALTO - 70), (ANCHO, ALTO - 70), 5)
+    pygame.draw.line(screen, (255, 255, 255), (0, ALTO - 570), (ANCHO, ALTO - 570), 10)
 
     #muestra puntos, tiempo, el item y la letra
     ren1 = defaultFont.render("Puntos: " + str(puntos), 1, COLOR_TEXTO)
