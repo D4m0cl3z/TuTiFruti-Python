@@ -50,9 +50,11 @@ def main():
     palabraUsuario=""
     eleccionUsuario=[]
     eleccionCompu=juegaCompu(letraAzar, listaDeTodo)
+    j=0
     i=0
-    auxTime=0
-    now = datetime.datetime.now()
+    aux=0
+    segaux=0
+    segpar=0
 ##    parcial=datetime.datetime.now()
     while i < len(items):
         # 1 frame cada 1/fps segundos
@@ -72,23 +74,22 @@ def main():
                     if e.key == K_BACKSPACE:
                         palabraUsuario = palabraUsuario[0:len(palabraUsuario)-1]
                     if e.key == K_RETURN:
-                        now=datetime.datetime.now()
+                        segaux=segundostot
                         eleccionUsuario.append(palabraUsuario.upper())
                         sumar=esCorrecta(palabraUsuario, letraAzar, i, items, listaDeTodo,eleccionCompu)
                         puntos+=sumar
                         palabraUsuario=""
                         i=i+1
         segundostot = pygame.time.get_ticks() / 1000
-        segundos=now.second - datetime.datetime.now().second + 15
-        if segundos ==0:
-            now=datetime.datetime.now()
-            eleccionUsuario.append("")
+        segpar=15 - int(segundostot-segaux)
+        if segpar==0:
+            segaux=segundostot
+            eleccionUsuario.append("tiempo vencido")
             i=i+1
-
         # limpiar pantalla anterior
         screen.fill(COLOR_FONDO)
         if i<len(items):
-            dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segundos)
+            dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segpar)
         else:
             dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot)
         pygame.display.flip()
