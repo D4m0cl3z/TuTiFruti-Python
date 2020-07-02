@@ -23,15 +23,10 @@ def main():
     gameClock = pygame.time.Clock()
     totaltime = 0
     fps = FPS_INICIAL
-
-    puntos = 0
-
     abc = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-
     items = ["colores","paises","animales","nombres","verduras","frutas"]
 
-##  #se ingresan los archivos y se utiliza la funcion "leerArchivo()" para leer los .txt que se le ingresen
-
+    ##se ingresan los archivos y se utiliza la funcion "leerArchivo()" para leer los .txt que se le ingresen
     colores = leerArchivo("colores.txt")
     paises = leerArchivo("paises.txt")
     animales = leerArchivo("animales.txt")
@@ -40,20 +35,18 @@ def main():
     verduras = leerArchivo("verduras.txt")
 
     listaDeTodo=[colores,paises,animales,nombres,verduras,frutas]
-    print(colores)
     letraAzar = unaAlAzar(abc)
     palabraUsuario = ""
     eleccionUsuario = []
-    eleccionCompu = []
     eleccionCompu = juegaCompu(letraAzar, listaDeTodo)
 
     # Cargo el sonido que suena por cada evento
     pygame.mixer.music.load('Sonido_POP.mp3')
 
     i = 0
-    aux = 0
     segaux = 0
     segpar = 0
+    puntos = 0
 
     while i < len(items):
 
@@ -78,20 +71,19 @@ def main():
                         pygame.mixer.music.play()
                         eleccionUsuario.append(palabraUsuario)
                         #chequea si es correcta y suma o resta puntos
-                        sumar = esCorrecta(palabraUsuario.lower(), letraAzar, listaDeTodo[i], i, letraAzar)
+                        sumar = esCorrecta(palabraUsuario.lower(), letraAzar, listaDeTodo[i], i, letraAzar,eleccionCompu)
                         puntos += sumar
                         palabraUsuario = ""
                         i += 1
 
-        # se usa un contador el cual si pasan 15 segundos sigue a la siguiente categoria                 
+        # se usa un contador el cual si pasan 15 segundos sigue a la siguiente categoria
         segundostot = pygame.time.get_ticks() / 1000
         segpar = 15 - int(segundostot-segaux)
         if segpar == 0:
             pygame.mixer.music.play()
             segaux = segundostot
-            eleccionUsuario.append("tiempo vencido")
+            eleccionUsuario.append("Tiempo vencido")
             i += 1
-
 
         # limpiar pantalla anterior
         fondo = pygame.image.load("fondoJuego.jpg")
@@ -108,21 +100,18 @@ def main():
             screen.blit(fondo,[-120,10])
             pygame.mixer.music.load('Aplauso.mp3')
             pygame.mixer.music.play()
-            
+
             dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot)
 
         pygame.display.flip()
 
-
     while True:
-
 
         for e in pygame.event.get():
             le = e.type
             if e.type == QUIT:
                 pygame.quit()
                 return
-
 
 if __name__ == "__main__":
     main()

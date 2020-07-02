@@ -3,7 +3,7 @@ from principal import *
 import math
 import random
 
-#Elige una letra al azar gracias a la funcion ramdom.choice y se le pasa todo el abc
+#Elige una letra al azar gracias a la funcion ramdom.choice
 def unaAlAzar(lista):
   return random.choice(lista)
 
@@ -17,17 +17,17 @@ def letraCorrecta(letra, palabraUsuario):
 def esPalabraCorrecta(palabraUsuario, letra, listaDeTodo):
     return CategoriaCorrecta(palabraUsuario, listaDeTodo) and letraCorrecta(letra, palabraUsuario)
 
-def esCorrecta(palabraUsuario, letra, listaDeTodo, stage, letraAzar):
-    return Puntos(palabraUsuario, juegaCompu(letraAzar, listaDeTodo)[stage] ) if esPalabraCorrecta(palabraUsuario, letra, listaDeTodo) else 0
+def esCorrecta(palabraUsuario, letra, listaDeTodo, stage, letraAzar,eleccionCompu):
+    return Puntos(palabraUsuario, eleccionCompu[stage]) if esPalabraCorrecta(palabraUsuario, letra, listaDeTodo) else 0
 
-#dependiendo de la longitud de la palabra se modifica cantidad de puntos y si la compu elige la misma palabra el puntaje se multiplica por 2 
+#dependiendo de la longitud de la palabra se modifica cantidad de puntos y si la compu elige la misma palabra el puntaje se multiplica por 2
 def Puntos(palabraUsuario, PalabraCompu):
     multiplicador = 1
     palabraPunto = len(palabraUsuario)
 
     if palabraUsuario == PalabraCompu:
         multiplicador = 2
-  
+
     if (palabraPunto >= 8 ):
         return 15 * multiplicador
     elif (palabraPunto >= 5):
@@ -36,7 +36,6 @@ def Puntos(palabraUsuario, PalabraCompu):
         return 5 * multiplicador
 
 #se utiliza la letra al  azar y las listas de las categorias para hacer que la maquina regrese una palabra corresponiente con la letra elegida,
-#la palabra que regresa es aleatoria y la maquina tiene un 33,3333333333 de posibilidad de fallar
 def juegaCompu(letraAzar, listaDeTodo):
     listaAux = []
     listaCompu = []
@@ -51,9 +50,10 @@ def juegaCompu(letraAzar, listaDeTodo):
 
     return listaCompu
 
+#la palabra que regresa es aleatoria y la maquina tiene un 33,33 de posibilidad de fallar
 def randomCompu(cadena):
     if 1 == random.randint(1, 3):
-        return "no llegue"
+        return "No llegué"
     return cadena
 
 #lee los archivos para generar las listas que posteriormente se van a utilizar para saber si las respuestas del usuario son correctas
