@@ -8,6 +8,7 @@ escarabajo
 erizo
 flamenco
 foca
+gato
 gacela
 golondrina
 garza
@@ -30,6 +31,7 @@ nutria
 oveja
 oso
 orca
+perro
 pelícano
 pinguino
 pato
