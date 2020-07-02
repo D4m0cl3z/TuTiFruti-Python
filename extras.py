@@ -77,7 +77,7 @@ def dibujar(screen, letra, item, palabraUsuario, puntos, segundos):
 
     #muestra puntos, tiempo, el item y la letra
     ren1 = defaultFont.render("Puntos: " + str(puntos), 1, COLOR_TEXTO)
-    ren2 = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL if segundos >60 else COLOR_TEXTO)
+    ren2 = defaultFont.render("Tiempo restante: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL if segundos <5 else COLOR_TEXTO)
     ren3 = defaultFontMUYGRANDE.render(item, 1, COLOR_TEXTO)
     ren4 = defaultFontMUYGRANDE.render(letra.upper(), 1, COLOR_LETRA)
 
@@ -97,7 +97,7 @@ def dibujarSalida(screen, letra, items, eleccionUsuario, eleccioncompu, puntos, 
 
     #muestra puntos, tiempo, el item y la letra
     ren1 = defaultFont.render("Puntos: " + str(puntos), 1, COLOR_TEXTO)
-    ren2 = defaultFont.render("Tiempo: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL if segundos > 60 else COLOR_TEXTO)
+    ren2 = defaultFont.render("Tiempo total: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL if segundos > 30 else COLOR_TEXTO)
     ren3 = defaultFontMUYGRANDE.render(letra.upper(), 1, COLOR_LETRA)
 
 
@@ -120,5 +120,7 @@ def dibujarSalida(screen, letra, items, eleccionUsuario, eleccioncompu, puntos, 
     for palabra in eleccioncompu:
         screen.blit(defaultFontGRANDE.render(palabra, 1, COLOR_LETRAS), (ANCHO-200, y))
         y=y+TAMANO_LETRA_GRANDE*2
+
+
 
 
