@@ -7,7 +7,7 @@ import random
 def unaAlAzar(lista):
   return random.choice(lista)
 
-#se utiliza booleanos para comparar si la palabra que se ingresó corresponde a una palabra de la categoria situada en el evento actual
+#Devuelve booleanos para comparar si la palabra que se ingresó corresponde a una palabra de la categoria situada en el evento actual
 def CategoriaCorrecta(palabraUsuario, palabrasDeCategoria):
     return palabraUsuario in palabrasDeCategoria
 

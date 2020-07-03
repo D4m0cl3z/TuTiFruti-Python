@@ -94,12 +94,13 @@ def main():
             dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segpar)
         else:
             if puntos > 15:
-                fondo = pygame.image.load("IMG1.png")
+                fondo = pygame.image.load("IMG1.jpg")
+                pygame.mixer.music.load('Aplauso.mp3')
+                pygame.mixer.music.play()
             else:
-                fondo = pygame.image.load("IMG2.png")
-            screen.blit(fondo,[-120,10])
-            pygame.mixer.music.load('Aplauso.mp3')
-            pygame.mixer.music.play()
+                fondo = pygame.image.load("IMG2.jpg")
+            screen.blit(fondo,[-80,10])
+
 
             dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot)
 

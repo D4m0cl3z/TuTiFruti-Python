@@ -32,7 +32,7 @@ oveja
 oso
 orca
 perro
-pelícano
+pelicano
 pinguino
 pato
 raya
