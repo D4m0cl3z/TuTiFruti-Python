@@ -1,4 +1,9 @@
 # TuTiFruti-Python
 Tp Introducción a la Programación UNGS 
 
-# Branch-Damian
+#PARTICPANTES:
+
+•	Ocampo, Gaston Ezequiel
+•	Jona
+•	Fabricio Damian Dominguez
+
