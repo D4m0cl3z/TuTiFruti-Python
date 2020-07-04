@@ -37,22 +37,19 @@ def Puntos(palabraUsuario, PalabraCompu):
 
 #se utiliza la letra al  azar y las listas de las categorias para hacer que la maquina regrese una palabra corresponiente con la letra elegida,
 def juegaCompu(letraAzar, listaDeTodo):
-    listaAux = []
     listaCompu = []
-    for i in range (0, len(listaDeTodo)):
-        del listaAux[:]
-        for palabra in listaDeTodo[i]:
-            if letraAzar == palabra[0]:
-                listaAux.append(palabra)
-        if not listaAux:
-            listaAux.append("Palabra no encontada")
-        listaCompu.append(randomCompu(random.choice(listaAux)))
-
+    for categoria in listaDeTodo:
+        palabrasCorrectas =  [palabra for palabra in categoria if palabra[0] == letraAzar]
+        if palabrasCorrectas:
+            posiblePalabra = random.choice(palabrasCorrectas)
+        else:
+            posiblePalabra = "Palabra no encontrada"           
+        listaCompu.append(randomCompu(posiblePalabra))
     return listaCompu
 
 #la palabra que regresa es aleatoria y la maquina tiene un 33,33 de posibilidad de fallar
 def randomCompu(cadena):
-    if 1 == random.randint(1, 3):
+    if 1 == random.randint(1, 10):
         return "No llegué"
     return cadena
 
