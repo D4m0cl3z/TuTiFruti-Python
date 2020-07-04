@@ -38,8 +38,11 @@ def main():
     letraAzar = unaAlAzar(abc)
     palabraUsuario = ""
     eleccionUsuario = []
-    eleccionCompu = juegaCompu(letraAzar, listaDeTodo)
 
+    eleccionCompu = juegaCompu(letraAzar, listaDeTodo)
+    puntosCompu=sumaPuntosCompu(eleccionCompu)
+
+    print(puntosCompu)
     # Cargo el sonido que suena por cada evento
     pygame.mixer.music.load('Sonido_POP.mp3')
 
@@ -101,8 +104,7 @@ def main():
                 fondo = pygame.image.load("IMG2.jpg")
             screen.blit(fondo,[-80,10])
 
-
-            dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot)
+            dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot,puntosCompu)
 
         pygame.display.flip()
 
