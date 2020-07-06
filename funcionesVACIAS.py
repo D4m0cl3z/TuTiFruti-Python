@@ -94,24 +94,5 @@ def presentacion(screen, pg):
     while presentacion == True:
         screen.blit(fondo,[-80,-80])
         pg.display.flip()
-        time.sleep(3)
+        time.sleep(5)
         presentacion = False
-
-
-
-# def presentacion(screen, pg):
-#     fondo = pygame.image.load("pcarga.jpg")
-#     i=0
-#     presentacion = True
-#     cargaText = "Cargando"
-
-#     while presentacion == True :
-#         screen.blit(fondo,[-100,-100])
-#         pg.display.flip()
-#         dibujoText = pygame.font.Font(pygame.font.get_default_font(), TAMANO_LETRA_GRANDE).render(cargaText, 1, COLOR_ROJO)
-#         screen.blit(dibujoText , (-10, -10))
-#         time.sleep(1)
-#         i+=1
-#         if i == 4:
-#             cargaText+= " . "   
-#             presentacion = False

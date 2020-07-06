@@ -87,7 +87,7 @@ def main():
         segundostot = pygame.time.get_ticks() / 1000  
 
         if i == 0:
-            segpar = 18 - int(segundostot-segaux)
+            segpar = 20 - int(segundostot-segaux)
         else:
             segpar = 15 - int(segundostot-segaux)
 
