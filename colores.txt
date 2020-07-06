@@ -1,25 +1,66 @@
-azul
 amarillo
-blanco
+ámbar
+añil
+azul
+azul claro
+azul eléctrico
+azul marino
 beige
-celeste
+bermellón
+blanco
+blanco marfil
+burdeos
+café
+caoba o rojo indio
+caqui
+carmesí
+castaño
+celeste 
+cereza
+champán
+chartreuse o cartujo
 cian
-dorado
-esmeralda
+cobre
+color terracota o teja
+coral 
+crema 
 fucsia
 granate
 gris
-jade
+gris perla
+gris zinc
+gualdo
+hueso
+lavanda
 lila
 magenta
-marron
+marrón
+marrón chocolate
+morado
 naranja
 negro
+ocre
+ocre claro
+ocre oscuro
+oro o dorado 
+pardo
+plata
+púrpura
 rojo
+rojo carmín
+rojo óxido
 rosa
+rosa palo
+salmón
 turquesa
-uva
 verde
+verde botella
+verde esmeralda
+verde lima
+verde manzana
+verde musgo
+verde oliva
+verde pistacho
+verdeagua o aguamarina
 violeta
-yeso
-zinc
+vino

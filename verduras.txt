@@ -48,6 +48,7 @@ lechuga
 maiz
 nabo
 papa
+palta
 patata
 pepino
 pimientos

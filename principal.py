@@ -38,7 +38,10 @@ def main():
     letraAzar = unaAlAzar(abc)
     palabraUsuario = ""
     eleccionUsuario = []
+
     eleccionCompu = juegaCompu(letraAzar, listaDeTodo)
+    puntosCompu=sumaPuntosCompu(eleccionCompu)
+
 
     # Cargo el sonido que suena por cada evento
     pygame.mixer.music.load('Sonido_POP.mp3')
@@ -71,7 +74,7 @@ def main():
                         pygame.mixer.music.play()
                         eleccionUsuario.append(palabraUsuario)
                         #chequea si es correcta y suma o resta puntos
-                        sumar = esCorrecta(palabraUsuario.lower(), letraAzar, listaDeTodo[i], i, letraAzar,eleccionCompu)
+                        sumar = esCorrecta(sacaTildes(palabraUsuario.lower()), letraAzar, listaDeTodo[i], i, letraAzar,eleccionCompu)
                         puntos += sumar
                         palabraUsuario = ""
                         i += 1
@@ -93,7 +96,7 @@ def main():
         if i<len(items):
             dibujar(screen, letraAzar, items[i], palabraUsuario, puntos, segpar)
         else:
-            if puntos > 15:
+            if puntos >= puntosCompu:
                 fondo = pygame.image.load("IMG1.jpg")
                 pygame.mixer.music.load('Aplauso.mp3')
                 pygame.mixer.music.play()
@@ -101,8 +104,7 @@ def main():
                 fondo = pygame.image.load("IMG2.jpg")
             screen.blit(fondo,[-80,10])
 
-
-            dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot)
+            dibujarSalida(screen, letraAzar, items, eleccionUsuario, eleccionCompu, puntos, segundostot,puntosCompu)
 
         pygame.display.flip()
 

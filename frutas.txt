@@ -1,5 +1,6 @@
 aguacate
 albaricoque
+anana
 arandano
 arandanos agrios
 arandanos rojos
