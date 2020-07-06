@@ -1,5 +1,6 @@
 alce
 avestruz
+aguila
 boa
 castor
 cangrejo
@@ -32,7 +33,7 @@ oveja
 oso
 orca
 perro
-pelícano
+pelicano
 pinguino
 pato
 raya
