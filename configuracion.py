@@ -11,10 +11,11 @@ COLOR_LETRA = (0, 0, 0 )
 COLOR_LETRAS = (0, 0, 0 )
 
 COLOR_TEXTO = (0, 0, 0 )
+COLOR_ROJO = (200, 20, 10 )
 COLOR_TIEMPO_FINAL = (0, 0, 0 )
 
 VACIO = "XXXXXXXX"
 
-NONEPBASE = "Palabra no encontada"
+NONEPBASE = "Palabra no hallada"
 
 NLLEGUE = "No llegué"

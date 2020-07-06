@@ -51,6 +51,10 @@ def main():
     segpar = 0
     puntos = 0
 
+
+
+    presentacion(screen,pygame)
+
     while i < len(items):
 
         # 1 frame cada 1/fps segundos
@@ -80,8 +84,13 @@ def main():
                         i += 1
 
         # se usa un contador el cual si pasan 15 segundos sigue a la siguiente categoria
-        segundostot = pygame.time.get_ticks() / 1000
-        segpar = 15 - int(segundostot-segaux)
+        segundostot = pygame.time.get_ticks() / 1000  
+
+        if i == 0:
+            segpar = 18 - int(segundostot-segaux)
+        else:
+            segpar = 15 - int(segundostot-segaux)
+
         if segpar == 0:
             pygame.mixer.music.play()
             segaux = segundostot

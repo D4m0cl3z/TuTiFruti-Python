@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 from configuracion import *
+from funcionesVACIAS import *
 
 def dameLetraApretada(key):
     if key == K_a:
@@ -76,7 +77,7 @@ def dibujar(screen, letra, item, palabraUsuario, puntos, segundos):
 
     #muestra puntos, tiempo, el item y la letra
     ren1 = defaultFontChico.render("Puntos: " + str(puntos), 1, COLOR_TEXTO)
-    ren2 = defaultFontChico.render("Tiempo restante: " + str(int(segundos)), 1, COLOR_TIEMPO_FINAL if segundos <6 else COLOR_TEXTO)
+    ren2 = defaultFontChico.render("Tiempo restante: " + str(int(segundos)), 1, COLOR_ROJO if segundos <6 else COLOR_TEXTO)
     ren3 = defaultFontMUYGRANDE.render(item, 1, COLOR_TEXTO)
     ren4 = defaultFontMUYGRANDE.render(letra.upper(), 1, COLOR_LETRA)
 
